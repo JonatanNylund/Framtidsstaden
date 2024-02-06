@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*Fonter*/
+#s1home, #s2home, #introtext, #present, #explain, #preshead, .sec1, .sec2, .sec3, .nav{
+    font-family: 'Montserrat', sans-serif;
+}
+
+/*Text align center på texter och rubriker*/
+footer, h2, #present p, #explain, #preshead, .sec1, .sec2, .sec3{
+    text-align: center;
+}
+
+/*Fontstorlek på långa textstycken*/
+#introtext, #s1home, #s2home, #explain p, .sec1, .sec2, .sec3{
+    font-size: 18pxx;
+}
+#introbild{
+    grid-area: introbild;
+}
+picture, img{
+    width: 300px;
+    height: 300px;
+}
+section, picture, img{
+    padding-bottom: 20px;
+}
+
+.logo{
+    font-size: 30px;
+}
+
+/*Nav*/
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px;
+    background-color: teal;
+    color: #fff;
+}
+
+
+nav li {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-links a {
+    color: #fff;
+}
+
+.menu li{
+    display: grid;
+    align-content: space-between;
+}
+
+
+h1 {
+    font-size: 25px;
+    font-family: 'Lato', sans-serif;
+    color: #000000;
+    margin-left: 10px;
+}
+
+/* *Fixa bakgrundsfärg */
+footer {
+    position: fixed;
+    height: 35px;
+    width: 100%;
+    background-color: #7fcec5;
+    background-image: linear-gradient(315deg, #7fcec5 0%, #14557b 74%);
+    color: #ffffff;
+    font-family: 'Lato', sans-serif;
+    font-size: 25px;
+    bottom: 0px;
+}
+
+#s1home, #sec1 {
+    grid-area: s1home;
+}
+
+#s2home, #sec2{
+    grid-area: s2home;
+}
+
+#img1 {
+    grid-area: bild1;
+    padding-left: 10px;
+}
+
+#img2{
+    grid-area: bild2;
+    padding-left: 10px;
+}
+
+#introbild{
+    grid-area: introbild;
+}
+
+.main {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: 1fr 500px 500px 1fr 500px 1fr;
+    grid-template-areas: "introtext"
+                        "introbild"
+                        "bild1"
+                        "s1home"
+                        "bild2"
+                        "s2home";
+    padding-left: 30px;
+    padding-right: 30px;
+    gap: 10px;
+    background-color: #7fcec5;
+    background-image: linear-gradient(315deg, #7fcec5 0%, #14557b 74%); 
+}
+
+.main2 {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-areas: "sec1"
+                        "sec2"
+                        "sec2img"
+                        "sec3"
+                        "sec3img";
+    background-color: #3AA4EA;
+    padding-left: 30px;
+    padding-right: 30px;
+    background-color: #7fcec5;
+    background-image: linear-gradient(315deg, #7fcec5 0%, #14557b 74%);
+    color: white;
+}
+
+.sec1{
+    grid-area: sec1;
+}
+.sec2{
+    grid-area: sec2;
+}
+.sec2img{
+    grid-area: sec2img;
+}
+.sec3{
+    grid-area: sec3;
+}
+.sec3img{
+    grid-area: sec3img;
+}
+#introtext {
+    grid-area: introtext;
+    color: white;
+    padding-top: 20px;
+}
+
+#present{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 3px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+#explain, #preshead{
+    margin-top: 5%;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+#preshead{
+    margin-bottom: 10px;
+}
+
+#s1home, #s2home{
+    background-color: white;
+}
+
+
+
+
+/*Tablet*/
+@media only screen and (min-width: 600px) {
+    #nav a.icon{
+     visibility: hidden;
+    }
+}
+
+
+/*Desktop*/
+
+@media only screen and (min-width: 769px) {
+    .main {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        gap: 10px;
+        grid-template-areas: "introtext introbild"
+                            "s1home bild1"
+                            "bild2 s2home";
+    }
+    #present{
+        display: flex;
+        justify-content: space-evenly;
+        font-family: 'Montserrat', sans-serif;
+        width: 100%;
+    }
+    #img1 img, #img2 img{
+        width: 100%;
+    }
+    #s1home{
+        width: 50vw;
+    }
+    .main2{
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-areas: "sec1 sec1"
+                            "sec2 sec2img"
+                            "sec3img sec3";
+    }
+    nav a {
+        text-decoration: none;
+        font-family: 'Montserrat', sans-serif;
+      }
+      
+    nav li {
+        list-style: none;
+    }
+      
+      
+      /* LOGO */
+    .logo {
+        font-size: 32px;
+    }
+      
+      
+    .nav-links li:hover {
+        background-color: #4c9e9e;
+        border-radius: 5px;
+        transition: 0.3s ease;
+    }
+      
+    .nav-links li {
+        padding: 5px 14px;
+    }
+      picture, img{
+        width: 400px;
+        height: 400px;
+    }
+    .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px;
+        background-color: teal;
+        color: #fff;
+    }
+}
